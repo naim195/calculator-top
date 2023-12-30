@@ -1,26 +1,70 @@
-body{
-    padding: 0;
+body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
     background-color: wheat;
 }
 
-#calc-body{    
+#calc-body {
     background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid gray;
+    max-width: 300px;
+}
+
+#display {
+    background-color: wheat;
+    border: 5px solid lightgray;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.btns {
+    display: flex;
+}
+
+.non-ops {
     display: flex;
     flex-direction: column;
 }
 
-#display{
-    background-color: wheat;
-    
-
+#extra-btns,
+#button-nos {
+    display: flex;
+    max-width: 204px;
+    flex-wrap: wrap;
 }
 
-.button{
+.button {
     background-color: orange;
-    width: 30px;
-    height: 30px;
-    margin: 2px;
+    width: 60px;
+    height: 60px;
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: darkorange;
+}
+
+.button.ops {
+    background-color: darkorange;
+}
+
+.button.dp {
+    background-color: orange;
+}
+
+.zero{
+    width: 128px;
 }
