@@ -1,0 +1,26 @@
+body{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+}
+
+#calc-body{    
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+}
+
+#display{
+    background-color: wheat;
+    
+
+}
+
+.button{
+    background-color: orange;
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+}
