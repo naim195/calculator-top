@@ -22,7 +22,6 @@ function createButtonsOps(){
         button.innerText=ops[i];
         if(ops[i]==='=') button.className+=' eq';        
         btnOps.appendChild(button);
-        
     }
 }
 
@@ -65,42 +64,39 @@ function updateDisplay(ans){
 let nums,oprtr;
 nums=[];
 oprtr=[];
+let currentNum = '';
 
 createButtonsNos();
 createButtonsOps();
-let k=0;
 
 let buttons=document.querySelectorAll('.button');
 buttons.forEach(button=>{
     button.addEventListener('click',()=>{
-        if (button.className === 'button ops eq') {
-            let ans = operate(nums[0], nums[1], oprtr[k]);
-            if (ans !== undefined) {
-                updateDisplay(ans);
-            } else {
-                updateDisplay('Error: Division by zero');
-            }
-        }
         if(button.className==='button no'||button.className==='button no zero'){
-            updateDisplay(button.innerText);
-            if(nums.length<2) nums.push(Number(button.innerText));
-            else{
-                nums[0]=operate(nums[0],nums[1],oprtr[k++]);
-                nums[1]=Number(button.innerText);                
-            }
+            currentNum += button.innerText;
+            updateDisplay(currentNum);
         } 
-        else if(button.className==='button ops') {
-            oprtr.push(button.innerText);
-            let ans=operate(nums[0],nums[1],oprtr[k]);
-            if(nums.length>1) updateDisplay(ans);
-            else updateDisplay(nums[0]+' '+oprtr[0]);
+        else if(button.className==='button ops' || button.className === 'button ops eq') {
+            nums.push(Number(currentNum));
+            currentNum = '';
+            if(nums.length === 2) {
+                let ans = operate(nums[0], nums[1], oprtr[0]);
+                if (ans !== undefined) {
+                    updateDisplay(ans);
+                    nums = [ans];
+                } else {
+                    updateDisplay('Error: Division by zero');
+                }
+                oprtr = [];
+            }
+            if(button.innerText !== '=') oprtr.push(button.innerText);
         }
 
         if(button.classList.contains('clear')){
             updateDisplay(0);
             nums=[];
             oprtr=[];
+            currentNum = '';
         }
-        
     });
 });
