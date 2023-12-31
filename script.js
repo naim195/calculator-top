@@ -67,29 +67,28 @@ oprtr=[];
 
 createButtonsNos();
 createButtonsOps();
-let k=0,c=0;
+let k=0;
 
 let buttons=document.querySelectorAll('.button');
 buttons.forEach(button=>{
     button.addEventListener('click',()=>{
         if(button.className==='button ops eq'){
-            let ans=operate(nums[0],nums[1],oprtr[0]);
+            let ans=operate(nums[0],nums[1],oprtr[k]);
             updateDisplay(ans);
         }
         if(button.className==='button no'){
             if(nums.length<2) nums.push(Number(button.innerText));
             else{
-                nums[0]=operate(nums[0],nums[1],oprtr[0]);
-                nums[1]=Number(button.innerText);
-                
+                nums[0]=operate(nums[0],nums[1],oprtr[k++]);
+                nums[1]=Number(button.innerText);                
             }
         } 
         else if(button.className==='button ops') {
-            if(oprtr.length==1) oprtr.push(button.innerText);
-            else{
-                oprtr.pop();
-                oprtr.push(button.innerText);
-            }
+            oprtr.push(button.innerText);            
+        }
+
+        if(button.classList.contains('clear')){
+            
         }
         
     });

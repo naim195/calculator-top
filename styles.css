@@ -65,6 +65,6 @@ body {
     background-color: orange;
 }
 
-.zero{
+.zero, .bksp{
     width: 128px;
 }
