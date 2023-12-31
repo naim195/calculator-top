@@ -4,25 +4,28 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: wheat;
+    background-color: #f4f4f4; /* Light gray background */
 }
 
 #calc-body {
-    background-color: lightgray;
+    background-color: #e0e0e0; /* Lighter gray background */
     display: flex;
     flex-direction: column;
-    border: 5px solid gray;
+    border: 5px solid #ccc; /* Slightly darker gray border */
     max-width: 300px;
+    min-height: 400px;
 }
 
 #display {
-    background-color: wheat;
-    border: 5px solid lightgray;
+    background-color: #f9f9f9; /* Off-white background */
+    border: 5px solid #e0e0e0; /* Lighter gray border */
     height: 100px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     padding: 10px;
+    font-family: 'Digital-7', sans-serif;
+    font-size: 2em;
 }
 
 .btns {
@@ -42,7 +45,8 @@ body {
 }
 
 .button {
-    background-color: orange;
+    background-color: #ff8c00; /* Orange button color */
+    color: #fff; /* White text color */
     width: 60px;
     height: 60px;
     margin: 4px;
@@ -51,24 +55,40 @@ body {
     align-items: center;
     font-size: 1.2em;
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.button:hover {
+    background-color: #ffaa33; /* Lighter orange on hover */
 }
 
 .button:active {
-    background-color: darkorange;
+    background-color: #cc7000; /* Darker orange on click */
 }
 
 .button.ops {
-    background-color: darkorange;
+    background-color: #cc7000; /* Darker orange for operator buttons */
 }
 
 .button.dp {
-    background-color: orange;
+    background-color: #ff8c00; /* Orange for decimal point button */
 }
 
-.zero, .bksp{
+.zero, .bksp {
     width: 128px;
 }
 
-.eq{
-    height: 80px;
+/* Additional styling for the equals button */
+.button.ops.eq {
+    flex: 1;
+    background-color: #4caf50; /* Green color for equals button */
+}
+
+.button.ops.eq:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.button.ops.eq:active {
+    background-color: #367938; /* Even darker green on click */
 }
