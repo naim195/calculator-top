@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Digital-7';
+    src: url('digital-7.regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -24,7 +31,7 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     padding: 10px;
-    font-family: 'Digital-7', sans-serif;
+    font-family: 'Digital-7',sans-serif;
     font-size: 2em;
 }
 
@@ -75,6 +82,8 @@ body {
     background-color: #ff8c00; /* Orange for decimal point button */
 }
 
+
+
 .zero, .bksp {
     width: 128px;
 }
@@ -83,6 +92,7 @@ body {
 .button.ops.eq {
     flex: 1;
     background-color: #4caf50; /* Green color for equals button */
+    height: 75px;
 }
 
 .button.ops.eq:hover {
