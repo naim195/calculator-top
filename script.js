@@ -20,7 +20,9 @@ function createButtonsOps(){
         let button=document.createElement('div');
         button.className='button ops';
         button.innerText=ops[i];
+        if(ops[i]==='=') button.className+=' eq';        
         btnOps.appendChild(button);
+        
     }
 }
 
@@ -55,17 +57,40 @@ function operate(a,b,oprtr){
     }
 }
 
+function updateDisplay(ans){
+    disp.innerText=ans;
+}
+
 let nums,oprtr;
 nums=[];
 oprtr=[];
 
 createButtonsNos();
 createButtonsOps();
+let k=0,c=0;
 
 let buttons=document.querySelectorAll('.button');
 buttons.forEach(button=>{
     button.addEventListener('click',()=>{
-        if(button.className==='button no') nums.push(Number(button.innerText));
-        else if(button.className==='button ops') oprtr.push(button.innerText); 
+        if(button.className==='button ops eq'){
+            let ans=operate(nums[0],nums[1],oprtr[0]);
+            updateDisplay(ans);
+        }
+        if(button.className==='button no'){
+            if(nums.length<2) nums.push(Number(button.innerText));
+            else{
+                nums[0]=operate(nums[0],nums[1],oprtr[0]);
+                nums[1]=Number(button.innerText);
+                
+            }
+        } 
+        else if(button.className==='button ops') {
+            if(oprtr.length==1) oprtr.push(button.innerText);
+            else{
+                oprtr.pop();
+                oprtr.push(button.innerText);
+            }
+        }
+        
     });
 });
