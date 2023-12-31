@@ -68,3 +68,7 @@ body {
 .zero, .bksp{
     width: 128px;
 }
+
+.eq{
+    height: 80px;
+}

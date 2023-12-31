@@ -51,9 +51,10 @@ function operate(a,b,oprtr){
         case '*':
             return multiply(a, b);
         case '/':
-            return divide(a, b);
+            if(b==0) return undefined;
+            else    return divide(a, b);
         default:
-            return 'Invalid operator';
+            return 'Invalid operator. Press AC to restart.';
     }
 }
 
@@ -72,11 +73,16 @@ let k=0;
 let buttons=document.querySelectorAll('.button');
 buttons.forEach(button=>{
     button.addEventListener('click',()=>{
-        if(button.className==='button ops eq'){
-            let ans=operate(nums[0],nums[1],oprtr[k]);
-            updateDisplay(ans);
+        if (button.className === 'button ops eq') {
+            let ans = operate(nums[0], nums[1], oprtr[k]);
+            if (ans !== undefined) {
+                updateDisplay(ans);
+            } else {
+                updateDisplay('Error: Division by zero');
+            }
         }
-        if(button.className==='button no'){
+        if(button.className==='button no'||button.className==='button no zero'){
+            updateDisplay(button.innerText);
             if(nums.length<2) nums.push(Number(button.innerText));
             else{
                 nums[0]=operate(nums[0],nums[1],oprtr[k++]);
@@ -84,11 +90,16 @@ buttons.forEach(button=>{
             }
         } 
         else if(button.className==='button ops') {
-            oprtr.push(button.innerText);            
+            oprtr.push(button.innerText);
+            let ans=operate(nums[0],nums[1],oprtr[k]);
+            if(nums.length>1) updateDisplay(ans);
+            else updateDisplay(nums[0]+' '+oprtr[0]);
         }
 
         if(button.classList.contains('clear')){
-            
+            updateDisplay(0);
+            nums=[];
+            oprtr=[];
         }
         
     });
