@@ -3,7 +3,7 @@ let btnNos=document.querySelector('#button-nos');
 let btnOps=document.querySelector('#button-ops');
 let disp=document.querySelector('#display');
 let darkThemeToggle = document.querySelector('#dark-theme-toggle');
-
+let darkMode = false;
 
 const buttonOrder=[7, 8, 9, 4, 5, 6, 1, 2, 3, 0,'.']
 function createButtonsNos(){    
@@ -75,6 +75,9 @@ darkThemeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
     calcBody.classList.toggle('dark-theme');
     disp.classList.toggle('dark-theme');
+    darkMode = !darkMode;
+    darkThemeToggle.innerText = darkMode ? 'Toggle light mode' : 'Toggle dark mode';
+
     buttons.forEach(button=>
         {
             button.classList.toggle('dark-theme');

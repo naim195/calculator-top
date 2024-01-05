@@ -152,3 +152,36 @@ body {
 .button.ops.eq:active {
     background-color: #00251a; /* Even darker teal on click */
 }
+
+#dark-theme-toggle {
+    background-color: #4caf50; /* Green color for toggle button in light theme */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+#dark-theme-toggle:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+#dark-theme-toggle:active {
+    background-color: #367938; /* Even darker green on click */
+}
+
+.dark-theme #dark-theme-toggle {
+    background-color: #555; /* Darker background color for toggle button in dark theme */
+    color: #fff; /* White text color */
+}
+
+.dark-theme #dark-theme-toggle:hover {
+    background-color: #777; /* Lighter green on hover in dark theme */
+}
+
+.dark-theme #dark-theme-toggle:active {
+    background-color: #444; /* Darker green on click in dark theme */
+}
+
