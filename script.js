@@ -1,7 +1,9 @@
-let calcBody=document.querySelector('.calc-body');
+let calcBody=document.querySelector('#calc-body');
 let btnNos=document.querySelector('#button-nos');
 let btnOps=document.querySelector('#button-ops');
 let disp=document.querySelector('#display');
+let darkThemeToggle = document.querySelector('#dark-theme-toggle');
+
 
 const buttonOrder=[7, 8, 9, 4, 5, 6, 1, 2, 3, 0,'.']
 function createButtonsNos(){    
@@ -68,6 +70,16 @@ let currentNum = '';
 
 createButtonsNos();
 createButtonsOps();
+
+darkThemeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    calcBody.classList.toggle('dark-theme');
+    disp.classList.toggle('dark-theme');
+    buttons.forEach(button=>
+        {
+            button.classList.toggle('dark-theme');
+        });
+});
 
 let buttons=document.querySelectorAll('.button');
 buttons.forEach(button=>{

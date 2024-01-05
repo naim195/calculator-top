@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link href='styles.css' rel='stylesheet'>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Calculator</title>
-        
-    </head>
-    <body>
-        <div id="calc-body">
-            <div id="display">0</div>
-            <div class="btns">
-                <div class="non-ops">
-                    <div id="extra-btns">
-                        <div class="button clear">AC</div>
-                        <div class="button bksp">DEL</div>
-                        
-                    </div>
-                    <div id="button-nos">                        
-                        
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <link href='styles.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+</head>
+<body class="dark-theme">
+    <div id="calc-body">
+        <div id="display">0</div>
+        <div class="btns">
+            <div class="non-ops">
+                <div id="extra-btns">
+                    <div class="button clear">AC</div>
+                    <div class="button bksp">DEL</div>
                 </div>
-                <div id="button-ops">
-                    <!-- divs added from js  -->
-
+                <div id="button-nos">                        
                 </div>
             </div>
+            <div id="button-ops">
+                <!-- divs added from js  -->
+            </div>
         </div>
-        <script src="script.js"></script>
-    </body>
+    </div>
+    <button id="dark-theme-toggle">Toggle Dark Theme</button>
+    <script src="script.js"></script>
+</body>
 </html>

@@ -7,10 +7,10 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     background-color: #f4f4f4; /* Light gray background */
 }
 
@@ -21,6 +21,7 @@ body {
     border: 5px solid #ccc; /* Slightly darker gray border */
     max-width: 300px;
     min-height: 400px;
+    margin-bottom: 20vh;
 }
 
 #display {
@@ -101,4 +102,53 @@ body {
 
 .button.ops.eq:active {
     background-color: #367938; /* Even darker green on click */
+}
+
+/* body.dark-theme {
+    background-color: #333; /* Dark background color */
+
+
+#calc-body.dark-theme {
+    background-color: #444; /* Darker gray background */
+    border: 5px solid #666; /* Darker gray border */
+}
+
+#display.dark-theme {
+    background-color: #555; /* Darker off-white background */
+    border: 5px solid #444; /* Darker lighter gray border */
+    color: #fff; /* White text color */
+}
+
+.button.dark-theme {
+    background-color: #555; /* Darker orange button color */
+    color: #fff; /* White text color */
+}
+
+.button:hover {
+    background-color: #777; /* Lighter orange on hover */
+}
+
+.button:active {
+    background-color: #444; /* Darker orange on click */
+}
+
+.button.ops.dark-theme {
+    background-color: #444; /* Darker orange for operator buttons */
+}
+
+.button.dp {
+    background-color: #555; /* Darker orange for decimal point button */
+}
+
+/* Additional styling for the equals button */
+.button.ops.eq {
+    background-color: #00796b; /* Dark teal color for equals button */
+}
+
+.button.ops.eq:hover {
+    background-color: #004d40; /* Darker teal on hover */
+}
+
+.button.ops.eq:active {
+    background-color: #00251a; /* Even darker teal on click */
 }
