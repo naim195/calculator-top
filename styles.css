@@ -1,187 +1,184 @@
 @font-face {
-    font-family: 'Digital-7';
-    src: url('digital-7.regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Digital-7";
+  src: url("digital-7.regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4; /* Light gray background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4; /* Light gray background */
 }
 
 #calc-body {
-    background-color: #e0e0e0; /* Lighter gray background */
-    display: flex;
-    flex-direction: column;
-    border: 5px solid #ccc; /* Slightly darker gray border */
-    max-width: 300px;
-    min-height: 400px;
-    margin-bottom: 20vh;
+  background-color: #e0e0e0; /* Lighter gray background */
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #ccc; /* Slightly darker gray border */
+  max-width: 300px;
+  min-height: 400px;
+  margin-bottom: 20vh;
 }
 
 #display {
-    background-color: #f9f9f9; /* Off-white background */
-    border: 5px solid #e0e0e0; /* Lighter gray border */
-    height: 100px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 10px;
-    font-family: 'Digital-7',sans-serif;
-    font-size: 2em;
+  background-color: #f9f9f9; /* Off-white background */
+  border: 5px solid #e0e0e0; /* Lighter gray border */
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 10px;
+  font-family: "Digital-7", sans-serif;
+  font-size: 2em;
 }
 
 .btns {
-    display: flex;
+  display: flex;
 }
 
 .non-ops {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #extra-btns,
 #button-nos {
-    display: flex;
-    max-width: 204px;
-    flex-wrap: wrap;
+  display: flex;
+  max-width: 204px;
+  flex-wrap: wrap;
 }
 
 .button {
-    background-color: #ff8c00; /* Orange button color */
-    color: #fff; /* White text color */
-    width: 60px;
-    height: 60px;
-    margin: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif;
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  background-color: #ff8c00; /* Orange button color */
+  color: #fff; /* White text color */
+  width: 60px;
+  height: 60px;
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
 .button:hover {
-    background-color: #ffaa33; /* Lighter orange on hover */
+  background-color: #ffaa33; /* Lighter orange on hover */
 }
 
 .button:active {
-    background-color: #cc7000; /* Darker orange on click */
+  background-color: #cc7000; /* Darker orange on click */
 }
 
 .button.ops {
-    background-color: #cc7000; /* Darker orange for operator buttons */
+  background-color: #cc7000; /* Darker orange for operator buttons */
 }
 
 .button.dp {
-    background-color: #ff8c00; /* Orange for decimal point button */
+  background-color: #ff8c00; /* Orange for decimal point button */
 }
 
-
-
-.zero, .bksp {
-    width: 128px;
+.zero,
+.bksp {
+  width: 128px;
 }
 
 /* Additional styling for the equals button */
 .button.ops.eq {
-    flex: 1;
-    background-color: #4caf50; /* Green color for equals button */
-    height: 75px;
+  flex: 1;
+  background-color: #4caf50; /* Green color for equals button */
+  height: 75px;
 }
 
 .button.ops.eq:hover {
-    background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049; /* Darker green on hover */
 }
 
 .button.ops.eq:active {
-    background-color: #367938; /* Even darker green on click */
+  background-color: #367938; /* Even darker green on click */
 }
 
 /* body.dark-theme {
     background-color: #333; /* Dark background color */
 
-
 #calc-body.dark-theme {
-    background-color: #444; /* Darker gray background */
-    border: 5px solid #666; /* Darker gray border */
+  background-color: #444; /* Darker gray background */
+  border: 5px solid #666; /* Darker gray border */
 }
 
 #display.dark-theme {
-    background-color: #555; /* Darker off-white background */
-    border: 5px solid #444; /* Darker lighter gray border */
-    color: #fff; /* White text color */
+  background-color: #555; /* Darker off-white background */
+  border: 5px solid #444; /* Darker lighter gray border */
+  color: #fff; /* White text color */
 }
 
 .button.dark-theme {
-    background-color: #555; /* Darker orange button color */
-    color: #fff; /* White text color */
+  background-color: #555; /* Darker orange button color */
+  color: #fff; /* White text color */
 }
 
 .button:hover {
-    background-color: #777; /* Lighter orange on hover */
+  background-color: #777; /* Lighter orange on hover */
 }
 
 .button:active {
-    background-color: #444; /* Darker orange on click */
+  background-color: #444; /* Darker orange on click */
 }
 
 .button.ops.dark-theme {
-    background-color: #444; /* Darker orange for operator buttons */
+  background-color: #444; /* Darker orange for operator buttons */
 }
 
 .button.dp {
-    background-color: #555; /* Darker orange for decimal point button */
+  background-color: #555; /* Darker orange for decimal point button */
 }
 
 /* Additional styling for the equals button */
 .button.ops.eq {
-    background-color: #00796b; /* Dark teal color for equals button */
+  background-color: #00796b; /* Dark teal color for equals button */
 }
 
 .button.ops.eq:hover {
-    background-color: #004d40; /* Darker teal on hover */
+  background-color: #004d40; /* Darker teal on hover */
 }
 
 .button.ops.eq:active {
-    background-color: #00251a; /* Even darker teal on click */
+  background-color: #00251a; /* Even darker teal on click */
 }
 
 #dark-theme-toggle {
-    background-color: #4caf50; /* Green color for toggle button in light theme */
-    color: #fff; /* White text color */
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  background-color: #4caf50; /* Green color for toggle button in light theme */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
 #dark-theme-toggle:hover {
-    background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049; /* Darker green on hover */
 }
 
 #dark-theme-toggle:active {
-    background-color: #367938; /* Even darker green on click */
+  background-color: #367938; /* Even darker green on click */
 }
 
 .dark-theme #dark-theme-toggle {
-    background-color: #555; /* Darker background color for toggle button in dark theme */
-    color: #fff; /* White text color */
+  background-color: #555; /* Darker background color for toggle button in dark theme */
+  color: #fff; /* White text color */
 }
 
 .dark-theme #dark-theme-toggle:hover {
-    background-color: #777; /* Lighter green on hover in dark theme */
+  background-color: #777; /* Lighter green on hover in dark theme */
 }
 
 .dark-theme #dark-theme-toggle:active {
-    background-color: #444; /* Darker green on click in dark theme */
+  background-color: #444; /* Darker green on click in dark theme */
 }
-
